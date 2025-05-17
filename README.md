@@ -78,7 +78,7 @@
 >   - Проверка отображения qr-кода в разделе "Приложения"
 
 
-## <img width="4%" title="Jenkins" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/Allure.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/.../)
+## <img width="4%" title="Jenkins" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/jenkins-original.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/.../)
 
 Для запуска тестов из Jenkins:
 1. Нажмите кнопку "Build with Parameters"
@@ -113,7 +113,7 @@ pytest --browser_version={BROWSER_VERSION}
 pytest tests
 ```
 
-### <img width="3%" title="Allure" src="https://github.com/Yunaika/yunaika/blob/main/img/logos/Allure.svg"> Allure
+### <img width="3%" title="Allure" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/Allure.svg"> Allure
 
 #### Примеры отображения тестов
 
@@ -121,7 +121,7 @@ pytest tests
 
 <img src="..." alt="Allure"/>
 
-### <img width="2.5%" title="Telegram" src="https://github.com/Yunaika/yunaika/blob/main/img/logos/telegram.png"> Telegram
+### <img width="2.5%" title="Telegram" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/telegram1.png"> Telegram
 
 Настроена отправка отчета в Telegram
 
