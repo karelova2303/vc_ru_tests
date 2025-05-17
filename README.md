@@ -78,7 +78,7 @@
 >   - Проверка отображения qr-кода в разделе "Приложения"
 
 
-## <img width="4%" title="Jenkins" src="https://github.com/Yunaika/yunaika/blob/main/img/logos/jenkins.png"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/juliamur_python_autotests_stepik_diplom/)
+## <img width="4%" title="Jenkins" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/Allure.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/.../)
 
 Для запуска тестов из Jenkins:
 1. Нажмите кнопку "Build with Parameters"
