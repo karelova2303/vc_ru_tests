@@ -12,11 +12,7 @@ DEFAULT_BROWSER_VERSION = '128.0'
 
 
 def pytest_addoption(parser):
-    parser.addoption(
-        '--browser_version',
-        default=DEFAULT_BROWSER_VERSION,
-        help='browser version (chrome: 128.0, 127.0)'
-    )
+    parser.addoption('--browser_version', default=DEFAULT_BROWSER_VERSION)
 
 
 @pytest.fixture(scope='session', autouse=True)
@@ -54,18 +50,11 @@ def browser_manager(request):
     browser.config.base_url = ('https://vc.ru')
     browser.driver.maximize_window()
 
-    yield
-
-    browser.quit()
-
-
-@pytest.fixture(scope='function', autouse=True)
-def browser_open(browser_manager):
-    browser.open('/')
-
     yield browser
 
     attach.add_screenshot(browser)
     attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
+
+    browser.quit()
