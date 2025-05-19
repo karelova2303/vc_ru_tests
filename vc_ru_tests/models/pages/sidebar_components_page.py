@@ -4,7 +4,7 @@ from selene import browser, have, be
 from vc_ru_tests.data.data import apps, advertising, rules
 
 
-class SideBarPage:
+class SideBarComponentsPage:
     def __init__(self):
         self.icon_chevron_down = browser.element('.sidebar-item > .icon--chevron_down')
 
@@ -28,7 +28,8 @@ class SideBarPage:
         self.apps_page_qr = browser.element('.apps-page__qr')
 
     def clickable_icon_chevron_down(self):
-        self.icon_chevron_down.click()
+        with allure.step('Кликаем кнопку "Показать все"'):
+            self.icon_chevron_down.click()
 
     def should_be_visible_content_subsite_cards(self, name, nick_name):
         with allure.step(f'Кликаем раздел "{name}"'):
