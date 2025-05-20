@@ -10,8 +10,9 @@ from vc_ru_tests.models.app import app
 @allure.suite('Хедер')
 @allure.title('Проверка отображения компонентов хедера при открытии страницы')
 @allure.link('https://vc.ru')
-def test_header():
+def test_header(browser_manager):
     app.main_page.open_main_page()
+    app.sidebar_components.scroll_to_header()
 
     app.main_page.should_be_visible_logo_in_header()
     app.main_page.should_be_visible_main_header()
@@ -25,7 +26,7 @@ def test_header():
 @allure.suite('Боковая панель "Темы"')
 @allure.title('Проверка контента карточек на соответствие выбранной темы из боковой панели')
 @allure.link('https://vc.ru')
-def test_sidebar_topics():
+def test_sidebar_topics(browser_manager):
     app.main_page.open_main_page()
 
     app.sidebar_components.clickable_icon_chevron_down()
@@ -37,7 +38,7 @@ def test_sidebar_topics():
 @allure.suite('Боковая панель "vc.ru"')
 @allure.title('Проверка контента карточек на соответствие выбранному разделу боковой панели')
 @allure.link('https://vc.ru')
-def test_sidebar_info():
+def test_sidebar_info(browser_manager):
     app.main_page.open_main_page()
 
     with allure.step(f'Проверяем раздел "О {about_project_title}"'):
