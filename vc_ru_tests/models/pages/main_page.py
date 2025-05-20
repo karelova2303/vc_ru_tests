@@ -1,5 +1,5 @@
 import allure
-from selene import browser, be, have
+from selene import browser, be, have, command
 
 
 class MainPage:
@@ -13,6 +13,7 @@ class MainPage:
     @allure.step('Открываем Главную страницу')
     def open_main_page(self):
         browser.open('/')
+
 
     @allure.step('Проверяем отображение логотипа')
     def should_be_visible_logo_in_header(self):
