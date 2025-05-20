@@ -49,7 +49,7 @@ def browser_manager(request):
     browser.config.window_height = 1080
     browser.config.window_width = 1920
     browser.config.base_url = 'https://vc.ru'
-    browser.config.timeout = 10.0
+    browser.config.timeout = 15.0
 
 
 
