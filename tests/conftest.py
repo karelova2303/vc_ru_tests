@@ -21,7 +21,7 @@ def pytest_addoption(parser):
     )
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='function')
 def browser_manager(request):
     selenoid_login = os.getenv("SELENOID_LOGIN")
     selenoid_pass = os.getenv("SELENOID_PASS")
@@ -51,18 +51,11 @@ def browser_manager(request):
     browser.config.base_url = 'https://vc.ru'
 
 
-    yield
-
-    browser.quit()
-
-@pytest.fixture(scope='function')
-def open_main(browser_manager):
-    browser.open('/')
-
-    yield
+    yield browser
 
     attach.add_screenshot(browser)
-    # attach.add_logs(browser)
+    attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
 
+    browser.quit()
