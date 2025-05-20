@@ -17,7 +17,7 @@ def load_env():
 def pytest_addoption(parser):
     parser.addoption(
         '--browser_version',
-        default='128.0'
+        default='125.0'
     )
 
 
@@ -31,7 +31,7 @@ def browser_manager(request):
     options = Options()
 
     selenoid_capabilities = {
-        "browserName": 'chrome',
+        "browserName": 'firefox',
         "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
@@ -49,6 +49,7 @@ def browser_manager(request):
     browser.config.window_height = 1080
     browser.config.window_width = 1920
     browser.config.base_url = 'https://vc.ru'
+
 
 
     yield browser
