@@ -21,7 +21,7 @@ def pytest_addoption(parser):
     )
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='function')
 def browser_manager(request):
     selenoid_login = os.getenv("SELENOID_LOGIN")
     selenoid_pass = os.getenv("SELENOID_PASS")
