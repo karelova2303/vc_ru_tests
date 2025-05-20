@@ -17,7 +17,7 @@ def load_env():
 def pytest_addoption(parser):
     parser.addoption(
         '--browser_version',
-        default='125.0'
+        default='109.0'
     )
 
 
@@ -31,7 +31,7 @@ def browser_manager(request):
     options = Options()
 
     selenoid_capabilities = {
-        "browserName": 'firefox',
+        "browserName": 'opera',
         "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
