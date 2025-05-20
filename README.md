@@ -110,7 +110,7 @@ pytest --browser_version={BROWSER_VERSION}
 
 > При локальном запуске введите в командной строке: 
 ```bash
-pytest tests
+pytest tests 
 ```
 
 ### <img width="3%" title="Allure" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/Allure.svg"> Allure
