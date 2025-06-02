@@ -145,7 +145,7 @@ pytest --browser_version={BROWSER_VERSION}
 
 ## :briefcase: Проект интегрирован с Jira
 
-### [Ссылка на проект в jira](https://jira.autotests.cloud/browse/HOMEWORK-1461)
+### [Ссылка на проект в Jira](https://jira.autotests.cloud/browse/HOMEWORK-1461)
 
 <img src="resources/images/jira.png" alt="Allure TestOps"/>
 
