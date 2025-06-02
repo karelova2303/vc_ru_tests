@@ -40,7 +40,7 @@ class SideBarComponentsPage:
         with allure.step(f'Проверяем никнейм титульной карточки "@{nick_name}"'):
             self.card_nickname.should(have.exact_text(f'@{nick_name}'))
 
-    def should_be_visible_content_sidebar_section_topics(self, top):
+    def should_be_visible_content_section_topics(self, top):
         for name, nick_name in top.items():
             with allure.step(f'Выбираем тему "{name}" в боковой панели '):
                 self.should_be_visible_content_subsite_cards(name, nick_name)
