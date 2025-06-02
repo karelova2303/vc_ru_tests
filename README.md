@@ -8,7 +8,7 @@
 - [Кратко](#heavy_check_mark-кратко)
 - [Технологии и инструменты](#gear-технологии-и-инструменты)
 - Что проверяем:
-  - [UI](#heavy_check_mark-реализованные проверки)
+  - [UI](#heavy_check_mark-реализованные-проверки)
 - Запуск тестов:
   - [Jenkins](#-запуск-тестов-из-jenkins)
   - [Локально](#computer-локальный-запуск)
@@ -16,6 +16,7 @@
   - [Allure](#bar_chart-отчеты-о-прохождении-тестов-доступны-в-allure)
   - [Telegram](#-telegram)
 - [Allure TestOps](#briefcase-проект-интегрирован-с-allure-testops)
+- [Jira](#briefcase-проект-интегрирован-с-jira)
 - [Видео прогона теста](#movie_camera-пример-видео-тестового-прогона)
 
 
@@ -31,13 +32,16 @@
 <p>Также по факту прохождения теста отправляется уведомление с результатами в Telegram.
 <p>Браузер в запускается удаленно в Selenoid.
 <p>Реализована интеграция с Allure TestOps.
+<p>Реализована интеграция с Jira.
 
 ## :heavy_check_mark: Кратко
 - [x] `Page Object` с шагами 
 - [x] Запуск тестов, используя `Jenkins` и `Selenoid`
+- [x] Отправка результатов тестирования в `Telegram`
 - [x] `Allure Reports` с вложениями (скриншоты, видео)
 - [x] Интеграция с `Allure TestOps`
-- [x] Отправка результатов тестирования в `Telegram`
+- [x] Интеграция с `Jira`
+
 
 ## :gear: Технологии и инструменты:
 
@@ -138,6 +142,12 @@ pytest --browser_version={BROWSER_VERSION}
 #### Представлены дашборды аналитики
 
 <img src="resources/images/testops_2.png" alt="Allure TestOps"/>
+
+## :briefcase: Проект интегрирован с Jira
+
+### [Ссылка на проект в jira](https://jira.autotests.cloud/browse/HOMEWORK-1461)
+
+<img src="resources/images/jira.png" alt="Allure TestOps"/>
 
 ## :movie_camera: Пример видео тестового прогона
 
