@@ -4,7 +4,7 @@ from selene import browser, be, have, command
 
 class MainPage:
     def __init__(self):
-        self.header_left = browser.element('.header__left > a')
+        self.header_left = browser.element('#app > div.bar.bar--top > div > div.header__layout > div.header__left > a')
         self.header_main = browser.element('.header__main')
         self.search_button = browser.element('.search__button')
         self.button_editor = browser.element('.header__right > [href="/editor"] > button')
@@ -13,7 +13,6 @@ class MainPage:
     @allure.step('Открываем Главную страницу')
     def open_main_page(self):
         browser.open('/')
-
 
     @allure.step('Проверяем отображение логотипа')
     def should_be_visible_logo_in_header(self):

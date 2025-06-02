@@ -21,7 +21,7 @@ def pytest_addoption(parser):
     )
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='session')
 def browser_manager(request):
     selenoid_login = os.getenv("SELENOID_LOGIN")
     selenoid_pass = os.getenv("SELENOID_PASS")
@@ -35,7 +35,7 @@ def browser_manager(request):
         "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
-            "enableVideo": True
+            "enableVideo": True,
         }
     }
     options.capabilities.update(selenoid_capabilities)
@@ -46,9 +46,9 @@ def browser_manager(request):
     )
 
     browser.config.driver = driver
-    browser.config.window_height = 1080
-    browser.config.window_width = 1920
     browser.config.base_url = 'https://vc.ru'
+    browser.driver.maximize_window()
+    browser.config.timeout = 10.0
 
     yield browser
 
@@ -58,3 +58,5 @@ def browser_manager(request):
     attach.add_video(browser)
 
     browser.quit()
+
+
