@@ -8,7 +8,7 @@ from vc_ru_tests.models.app import app
 @allure.tag('Web', 'Prod')
 @allure.label('owner', 'Karelova Ekaterina')
 @allure.suite('Хедер')
-@allure.title('Проверка отображения компонентов хедера при открытии страницы')
+@allure.title('Отображения компонентов хедера при открытии страницы')
 @allure.link('https://vc.ru')
 def test_should_be_visible_buttons_in_header(browser_manager):
     app.main_page.open_main_page()
@@ -23,7 +23,7 @@ def test_should_be_visible_buttons_in_header(browser_manager):
 @allure.tag('Web', 'Prod')
 @allure.label('owner', 'Karelova Ekaterina')
 @allure.suite('Боковая панель "Темы"')
-@allure.title('Проверка контента карточек на соответствие выбранной темы из боковой панели')
+@allure.title('Проверка вкладок бокового меню')
 @allure.link('https://vc.ru')
 def tests_should_be_visible_content_section_topics(browser_manager):
     app.main_page.open_main_page()
@@ -35,7 +35,7 @@ def tests_should_be_visible_content_section_topics(browser_manager):
 @allure.tag('Web', 'Prod')
 @allure.label('owner', 'Karelova Ekaterina')
 @allure.suite('Боковая панель "vc.ru"')
-@allure.title('Проверка контента карточек на соответствие выбранному разделу боковой панели')
+@allure.title('Проверка информационного раздела')
 @allure.link('https://vc.ru')
 def test_should_be_visible_content_info(browser_manager):
     app.main_page.open_main_page()
