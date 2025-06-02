@@ -144,5 +144,5 @@ pytest --browser_version={BROWSER_VERSION}
 В отчетах Allure для каждого теста прикрепленs скриншот, лог и видео прохождения теста
 
 <p align="center">
-  <img title="Video" src="resources/videos/video.mp4">
+  <img title="Video" src="resources/videos/video_1.gif">
 </p>
