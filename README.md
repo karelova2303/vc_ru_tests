@@ -35,7 +35,7 @@
 ## :heavy_check_mark: Кратко
 - [x] `Page Object` с шагами 
 - [x] Запуск тестов, используя `Jenkins` и `Selenoid`
-- [x] `Allure Reports` с вложениями (логи, скриншоты, видео)
+- [x] `Allure Reports` с вложениями (скриншоты, видео)
 - [x] Интеграция с `Allure TestOps`
 - [x] Отправка результатов тестирования в `Telegram`
 
@@ -66,38 +66,38 @@
 
 ## :heavy_check_mark: Реализованные проверки
 
-> - Проверка отображения компонентов хедера при открытии страницы
-> - Проверка контента карточек при выборе темы в боковой панели "Темы":
->   - Проверка на соответствие названия титульной карточки и выбранной темы
->   - Проверка на соответствие никнейма титульной карточки и выбранной темы
->   - Проверка, что все дополнительные карточки на странице имеют тег выбранной темы
-> - Проверка контента карточек при выборе информационного раздела в боковой панели "vc.ru" 
->   - Проверка автора титульной карточки в разделах "О проекте", "Правила", "Реклама" 
->   - Проверка названия титульной карточки в разделах "О проекте", "Правила", "Реклама"
+> - Отображения компонентов хедера при открытии страницы
+> - Проверка боковой панели "Темы" при клике на вкладки:
+>   - Название карточки и выбранной темы совпадают
+>   - Никнейм карточки и выбранной темы совпадают
+> - Проверка информационного раздела в боковой панели "vc.ru" 
+>   - Проверка автора карточки в разделах "О проекте", "Правила", "Реклама"
+>   - Проверка названия карточки разделов "О проекте", "Правила", "Реклама"
 >   - Проверка текста модального окна в разделе "Приложения"
 >   - Проверка отображения qr-кода в разделе "Приложения"
 
 
-## <img width="4%" title="Jenkins" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/jenkins-original.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/.../)
+## <img width="4%" title="Jenkins" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/jenkins-original.svg"> Запуск тестов из Jenkins
 
 Для запуска тестов из Jenkins:
-1. Нажмите кнопку "Build with Parameters"
+1. Открыть сборку в [Jenkins](https://jenkins.autotests.cloud/job/019-karelova2303-vc_ru_tests%20-%20unit_14/)
+2. Кликнуть кнопку "Build with Parameters" в боковом меню
 
-<p><img src="media/screenshots/jenkins_1.jpg" alt="Jenkins"/></p>
+<p><img src="resources/images/jenkins_1.png" alt="Jenkins"/></p>
 
-2. Выберите параметры
+2. Выбрать параметры
 
-<p><img src="media/screenshots/jenkins_2.jpg" alt="Jenkins"/></p>
+<p><img src="resources/images/jenkins_2.png" alt="Jenkins"/></p>
 
-3. Нажмите "Build"
+3. Кликнуть кнопку "Build"
 
 ## :computer: Локальный запуск 
 
-1. Склонируйте репозиторий
-2. Установите зависимости `pip install -r requirements.txt`
-3. Откройте проект в PyCharm, установите интерпретатор
-4. Создайте `.env` файл, пример файла - `.env.example`
-5. Запустите тесты в PyCharm или в командной строке:
+1. Склонировать репозиторий
+2. Установить зависимости командой `pip install -r requirements.txt`
+3. Открыть проект в PyCharm, установить интерпретатор
+4. Создать `.env` файл, пример файла - `.env.example`, находится в корне проекта
+5. Запустить тесты в командной строке:
 ```bash
 pytest --browser_version={BROWSER_VERSION} 
 ```
@@ -108,40 +108,41 @@ pytest --browser_version={BROWSER_VERSION}
 
 ## :bar_chart: Отчеты о прохождении тестов доступны в Allure
 
-> При локальном запуске введите в командной строке: 
-```bash
-pytest tests 
-```
+Сформировать отчет можно:
+-  локальный запуск: ввести в командной строке `allure serve allure-results`
+-  запуск через Jenkins: кликнуть кнопку "Allure Report" в боковом меню 
+
+<p><img src="resources/images/allure_1.png" alt="Allure"/></p>
 
 ### <img width="3%" title="Allure" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/Allure.svg"> Allure
 
 #### Примеры отображения тестов
 
-<img src="..." alt="Allure"/>
+<p><img src="resources/images/allure_2.png" alt="Allure"/></p>
 
-<img src="..." alt="Allure"/>
 
 ### <img width="2.5%" title="Telegram" src="https://github.com/karelova2303/karelova2303/blob/main/media/icons/telegram1.png"> Telegram
 
 Настроена отправка отчета в Telegram
 
-<img src="..." alt="Telegram"/>
+<img src="resources/images/telegram.png" alt="Telegram"/>
 
 
 ## :briefcase: Проект интегрирован с Allure TestOps 
 
-#### Cобраны тест-кейсы
+### [Ссылка на проект в TestOps](https://allure.autotests.cloud/project/4775/dashboards)
+#### Cобраны тест-кейсы 
 
-<img src="..." alt="Allure TestOps"/>
+<img src="resources/images/testops_1.png" alt="Allure TestOps"/>
 
 #### Представлены дашборды аналитики
 
-<img src="..." alt="Allure TestOps"/>
+<img src="resources/images/testops_2.png" alt="Allure TestOps"/>
 
 ## :movie_camera: Пример видео тестового прогона
 
 В отчетах Allure для каждого теста прикрепленs скриншот, лог и видео прохождения теста
 
 <p align="center">
-  <img title="Video" src="...">
+  <img title="Video" src="resources/videos/video.mp4">
 </p>
