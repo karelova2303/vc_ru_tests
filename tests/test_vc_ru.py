@@ -12,7 +12,6 @@ from vc_ru_tests.models.app import app
 @allure.link('https://vc.ru')
 def test_header(browser_manager):
     app.main_page.open_main_page()
-    app.sidebar_components.scroll_to_header()
 
     app.main_page.should_be_visible_logo_in_header()
     app.main_page.should_be_visible_main_header()

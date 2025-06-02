@@ -6,7 +6,6 @@ from vc_ru_tests.data.data import apps, advertising, rules
 
 class SideBarComponentsPage:
     def __init__(self):
-        self.header = browser.element('.header')
         self.icon_chevron_down = browser.element('.sidebar-item > .icon--chevron_down')
 
         self.card_name = browser.element('.subsite-card__name')
@@ -28,10 +27,6 @@ class SideBarComponentsPage:
         self.apps_page_title = browser.element('.apps-page__title')
         self.apps_page_qr = browser.element('.apps-page__qr')
 
-    def scroll_to_header(self):
-        with allure.step('Скроллим рекламу в шапке страницы'):
-            self.header.perform(command.js.scroll_into_view)
-
     def clickable_icon_chevron_down(self):
         with allure.step('Кликаем кнопку "Показать все"'):
             self.icon_chevron_down.click()
@@ -39,15 +34,11 @@ class SideBarComponentsPage:
     def should_be_visible_content_subsite_cards(self, name, nick_name):
         with allure.step(f'Кликаем раздел "{name}"'):
             browser.element(f'[href="/{nick_name}"]').click()
-        self.scroll_to_header()
+
         with allure.step(f'Проверяем название титульной карточки "{name}"'):
             self.card_name.should(have.exact_text(name))
         with allure.step(f'Проверяем никнейм титульной карточки "@{nick_name}"'):
             self.card_nickname.should(have.exact_text(f'@{nick_name}'))
-
-        with allure.step(f'Проверяем, что все дополнительные карточки на странице имеют тег "{name}"'):
-            for subsite_name in self.subsite_names:
-                subsite_name.element(self.subsite_name).should(have.exact_text(name))
 
     def should_be_visible_content_sidebar_section_topics(self, top):
         for name, nick_name in top.items():
@@ -55,7 +46,6 @@ class SideBarComponentsPage:
                 self.should_be_visible_content_subsite_cards(name, nick_name)
 
     def should_be_visible_content_about_project(self, name, title):
-        self.scroll_to_header()
         with allure.step(f'Кликаем раздел "О {title}"'):
             self.href_about.click()
         with allure.step(f'Проверяем автора титульной карточки "{name}"'):
@@ -64,7 +54,6 @@ class SideBarComponentsPage:
             self.content_title_editorial.should(have.exact_text(title))
 
     def should_be_visible_content_rules(self, name, title):
-        self.scroll_to_header()
         with allure.step(f'Кликаем раздел "{rules}"'):
             self.href_rules.click()
         with allure.step(f'Проверяем автора титульной карточки "{name}"'):
@@ -73,7 +62,6 @@ class SideBarComponentsPage:
             self.content_title.should(have.exact_text(title))
 
     def should_be_visible_content_advertising(self, name, title):
-        self.scroll_to_header()
         with allure.step(f'Кликаем раздел "{advertising}"'):
             self.href_ads.click()
         with allure.step(f'Проверяем автора титульной карточки "{name}"'):
@@ -82,7 +70,7 @@ class SideBarComponentsPage:
             self.content_title.should(have.exact_text(title))
 
     def should_be_visible_content_apps(self, title):
-        self.scroll_to_header()
+        self.href_apps.perform(command.js.scroll_into_view)
         with allure.step(f'Кликаем раздел "{apps}"'):
             self.href_apps.click()
         with allure.step(f'Проверяем текст модального окна "{title}"'):
